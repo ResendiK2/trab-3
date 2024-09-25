@@ -1,0 +1,7 @@
+# Ignorar arquivos de backup e temporários
+*.swp
+*.bak
+*.tmp
+
+# Ignorar diretório node_modules, se usar dependências JS
+node_modules/
