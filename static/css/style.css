@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  gap: 5px;
+}
+
+.casa {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clara {
+  background-color: #f0d9b5;
+}
+
+.escura {
+  background-color: #b58863;
+}
+
+.j1 {
+  background-color: red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.j2 {
+  background-color: blue;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
