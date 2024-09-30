@@ -69,11 +69,26 @@ tabuleiro_inicial([
     [j2, b, j2, b, j2, b, j2, b]
 ]).
 
-% Exibe o tabuleiro no terminal
-exibir_tabuleiro([]).
-exibir_tabuleiro([Linha | Resto]) :-
-    writeln(Linha),
-    exibir_tabuleiro(Resto).
+% Exibe o tabuleiro com numeração nas linhas e letras nas colunas (somente embaixo)
+exibir_tabuleiro(Tabuleiro) :-
+    exibir_linhas(Tabuleiro, 8),  % Começa a exibir as linhas a partir de 8
+    writeln("   A  B  C  D  E  F  G  H").  % Letras nas colunas (somente na parte inferior)
+
+% Exibe as linhas do tabuleiro com a numeração correspondente
+exibir_linhas([], 0).
+exibir_linhas([Linha | Resto], NumeroLinha) :-
+    format('~w ', [NumeroLinha]),  % Adiciona o número da linha à esquerda
+    exibir_linha_formatada(Linha),  % Exibe a linha do tabuleiro com formatação
+    nl,  % Nova linha
+    NovoNumeroLinha is NumeroLinha - 1,  % Decrementa o número da linha
+    exibir_linhas(Resto, NovoNumeroLinha).
+
+% Exibe uma linha do tabuleiro com formatação de largura fixa para manter o alinhamento
+exibir_linha_formatada([]).
+exibir_linha_formatada([Peca | Resto]) :-
+    format('~|~w~3+', [Peca]),  % Exibe cada peça ocupando 3 caracteres de largura
+    exibir_linha_formatada(Resto).
+
 
 % Loop do jogo, alterna entre jogador e maquina (terminal)
 loop_jogo(Tabuleiro, jogador) :-
