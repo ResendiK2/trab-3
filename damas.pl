@@ -57,18 +57,6 @@ interface_damas_handler(_Request) :-
           script([src('/js/script.js')], [])
         ]).
 
-% Representação inicial do tabuleiro (b = vazio, j1 = jogador 1, j2 = jogador 2)
-tabuleiro_inicial([
-    [b, j1, b, j1, b, j1, b, j1],
-    [j1, b, j1, b, j1, b, j1, b],
-    [b, j1, b, j1, b, j1, b, j1],
-    [b, b, b, b, b, b, b, b],
-    [b, b, b, b, b, b, b, b],
-    [j2, b, j2, b, j2, b, j2, b],
-    [b, j2, b, j2, b, j2, b, j2],
-    [j2, b, j2, b, j2, b, j2, b]
-]).
-
 % Exibe o tabuleiro no terminal
 exibir_tabuleiro([]).
 exibir_tabuleiro([Linha | Resto]) :-
