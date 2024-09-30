@@ -57,22 +57,22 @@ interface_damas_handler(_Request) :-
           script([src('/js/script.js')], [])
         ]).
 
-% Representação inicial do tabuleiro (b = vazio, j1 = jogador 1, j2 = jogador 2)
+% Representação inicial do tabuleiro (0 = vazio, a = jogador 1, b = jogador 2)
 tabuleiro_inicial([
-    [b, j1, b, j1, b, j1, b, j1],
-    [j1, b, j1, b, j1, b, j1, b],
-    [b, j1, b, j1, b, j1, b, j1],
-    [b, b, b, b, b, b, b, b],
-    [b, b, b, b, b, b, b, b],
-    [j2, b, j2, b, j2, b, j2, b],
-    [b, j2, b, j2, b, j2, b, j2],
-    [j2, b, j2, b, j2, b, j2, b]
+    [0, a, 0, a, 0, a, 0, a],
+    [a, 0, a, 0, a, 0, a, 0],
+    [0, a, 0, a, 0, a, 0, a],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [b, 0, b, 0, b, 0, b, 0],
+    [0, b, 0, b, 0, b, 0, b],
+    [b, 0, b, 0, b, 0, b, 0]
 ]).
 
 % Exibe o tabuleiro com numeração nas linhas e letras nas colunas (somente embaixo)
 exibir_tabuleiro(Tabuleiro) :-
     exibir_linhas(Tabuleiro, 8),  % Começa a exibir as linhas a partir de 8
-    writeln("   A  B  C  D  E  F  G  H").  % Letras nas colunas (somente na parte inferior)
+    writeln("  A  B  C  D  E  F  G  H").  % Letras nas colunas (somente na parte inferior)
 
 % Exibe as linhas do tabuleiro com a numeração correspondente
 exibir_linhas([], 0).
